@@ -5,15 +5,13 @@ namespace C_Light
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
             const string SumCommand = "sum";
             const string CommandExit = "exit";
 
             bool isProgramWork = true;
-            string userInput = "";
             List<int> dynamicArray = new List<int>();
-
 
             while (isProgramWork)
             {
@@ -21,8 +19,9 @@ namespace C_Light
                 Console.WriteLine($"<--добавить число в массив- просто  введите числа ");
                 Console.WriteLine($"{SumCommand}<--сложить все числа в массиве");
                 Console.WriteLine($"{CommandExit}<--выйти из программы");
-                userInput = Console.ReadLine();
-
+               
+                string userInput = Console.ReadLine();
+ 
                 switch (userInput)
                 {
                     case SumCommand:
@@ -59,9 +58,9 @@ namespace C_Light
         {
             int arraySum = 0;
 
-            for (int i = 0; i < dynamicArray.Count; i++)
+            foreach (int number in dynamicArray)
             {
-                arraySum += dynamicArray[i];
+                arraySum += number;
             }
 
             Console.WriteLine($"сумма чисел в массиве ровна - {arraySum}");
