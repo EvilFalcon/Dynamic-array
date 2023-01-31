@@ -11,7 +11,7 @@ namespace C_Light
             const string CommandExit = "exit";
 
             bool isProgramWork = true;
-            List<int> dynamicArray = new List<int>();
+            List<int> collectionOfNumbers = new List<int>();
 
             while (isProgramWork)
             {
@@ -25,7 +25,7 @@ namespace C_Light
                 switch (userInput)
                 {
                     case SumCommand:
-                        SumOfNumbers(dynamicArray);
+                        SumOfNumbers(collectionOfNumbers);
                         break;
 
                     case CommandExit:
@@ -33,7 +33,7 @@ namespace C_Light
                         break;
 
                     default:
-                        AddNumber(userInput, dynamicArray);
+                        AddNumber(userInput, collectionOfNumbers);
                         break;
                 }
 
@@ -42,7 +42,7 @@ namespace C_Light
             }
         }
 
-        private static void AddNumber(string userInput, List<int> dynamicArray)
+        private static void AddNumber(string userInput, List<int> collectionOfNumbers)
         {
             if (int.TryParse(userInput, out int number))
             {
@@ -54,11 +54,11 @@ namespace C_Light
             }
         }
 
-        private static void SumOfNumbers(List<int> dynamicArray)
+        private static void SumOfNumbers(List<int> collectionOfNumbers)
         {
             int arraySum = 0;
 
-            foreach (int number in dynamicArray)
+            foreach (int number in collectionOfNumbers)
             {
                 arraySum += number;
             }
